@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+<nav>
+    <ul class="menuItems">
+        <li><a href='index.html' class="menuItem" data-item='Home'>Home</a></li>
+        <li><a href='form.html' data-item='Form'>About</a></li>
+        <li><a href='https://github.com/MasMits' data-item='Projects'>Projects</a></li>
+    </ul>
+</nav>
+
+<div class="form">
+    <form>
+        <div style="width:  100px; display: inline-block"><b>E-mail:</b></div>
+        <input type="text" name="username" class="yellow"/>
+        <br/>
+
+        <br/>
+        <div style="width:  100px; display: inline-block"><b>Пароль:</b></div>
+        <input type="password" name="password" class="red"><br>
+        <br/>
+        <div style="width:  100px; display: inline-block"><b>Пароль, ще раз:</b></div>
+        <input type="password" name="password" class="red"><br>
+        <br/>
+        <div style="width:  100px; display: inline-block"><b>Ім'я:</b></div>
+
+        <input type="text" name="username" class="yellow"/>
+        <br/>
+        <div style="width:  100px; display: inline-block"><b>Фамілія:</b></div>
+        <input type="text" name="username" class="yellow"/>
+        <br/>
+        <div style="width:  100px; display: inline-block"><b>Гендер:</b></div>
+        <input type="radio" name="gender" value="male"/> Чоловік
+        <input type="radio" name="gender" value="female"/> Жінка
+        <br/>
+        <div style="width:  100px; display: inline-block"><b>Місто:</b></div>
+        <input list="Місто" class="blue"/>
+        <datalist id="Місто">
+            <option value="Київ"></option>
+            <option value="Харків"></option>
+            <option value="Львів"></option>
+        </datalist>
+        <br>
+        <div style="width:  100px; display: inline-block"><b>Про себе:</b></div>
+        <textarea class="green" placeholder="Напиши про себе" style=" height: 200px"></textarea>
+
+        <br/>
+
+        <br/>
+
+        <div style="margin-bottom:  10px; width:  100px; display: inline-block"><b>Умови:</b></div>
+        <div style="display: inline-block; text-align: left;">
+            <input type="checkbox" name="correct" value="Отримувати розсилку сайта"/> Отримувати розсилку сайта <br/>
+            <input type="checkbox" name="correct" value="Отримувати розсилку сайта"/> Погоджуюся із правилами сайту
+            <br/>
+            <input type="checkbox" name="correct" value="Отримувати розсилку сайта"/> Приховати профіль на сайті <br/>
+        </div>
+        <br/>
+
+        <input class="submitButton" type="submit" value="Зареєструватися"/> <input class="cleanButton" type="submit"
+                                                                                   value="Вичистити"/>
+
+    </form>
+</div>
+</body>
+</html>

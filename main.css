@@ -1,0 +1,433 @@
+body {
+    padding: 80px 16px 16px 16px;
+    background: #e39b3c;
+
+
+}
+body {
+    --s: 25vmin;
+    --p: calc(var(--s) / 2);
+    --c1: rgb(2, 2, 10);
+    --c2: rgb(186, 203, 233);
+    --c3: rgb(103, 180, 230);
+    --bg: var(--c3);
+    --d: 4000ms;
+    --e: cubic-bezier(0.76, 0, 0.24, 1);
+
+    background-color: var(--bg);
+    background-image:
+            linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+            linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+            linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+    background-size: var(--s) var(--s);
+    background-position:
+            calc(var(--p) *  1) calc(var(--p) *  0),
+            calc(var(--p) * -1) calc(var(--p) *  1),
+            calc(var(--p) *  1) calc(var(--p) * -1),
+            calc(var(--p) * -1) calc(var(--p) *  0);
+    animation:
+            color var(--d) var(--e) infinite,
+            position var(--d) var(--e) infinite;
+}
+
+@keyframes color {
+    0%, 25% {
+        --bg: var(--c3);
+    }
+    26%, 50% {
+        --bg: var(--c1);
+    }
+    51%, 75% {
+        --bg: var(--c3);
+    }
+    76%, 100% {
+        --bg: var(--c2);
+    }
+}
+
+@keyframes position {
+    0% {
+        background-position:
+                calc(var(--p) *  1) calc(var(--p) *  0),
+                calc(var(--p) * -1) calc(var(--p) *  1),
+                calc(var(--p) *  1) calc(var(--p) * -1),
+                calc(var(--p) * -1) calc(var(--p) *  0);
+    }
+    25% {
+        background-position:
+                calc(var(--p) *  1) calc(var(--p) *  4),
+                calc(var(--p) * -1) calc(var(--p) *  5),
+                calc(var(--p) *  1) calc(var(--p) *  3),
+                calc(var(--p) * -1) calc(var(--p) *  4);
+    }
+    50% {
+        background-position:
+                calc(var(--p) *  3) calc(var(--p) * 8),
+                calc(var(--p) * -3) calc(var(--p) * 9),
+                calc(var(--p) *  2) calc(var(--p) * 7),
+                calc(var(--p) * -2) calc(var(--p) * 8);
+    }
+    75% {
+        background-position:
+                calc(var(--p) *  3) calc(var(--p) * 12),
+                calc(var(--p) * -3) calc(var(--p) * 13),
+                calc(var(--p) *  2) calc(var(--p) * 11),
+                calc(var(--p) * -2) calc(var(--p) * 12);
+    }
+    100% {
+        background-position:
+                calc(var(--p) *  5) calc(var(--p) * 16),
+                calc(var(--p) * -5) calc(var(--p) * 17),
+                calc(var(--p) *  5) calc(var(--p) * 15),
+                calc(var(--p) * -5) calc(var(--p) * 16);
+    }
+}
+
+@media (prefers-reduced-motion) {
+    body {
+        animation: none;
+    }
+}
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    z-index: 30;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.social-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    width: 64px;
+    height: 64px;
+    text-decoration: none;
+    border-radius: 100%;
+    background: #fff;
+    text-align: center;
+}
+.social-button::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    transition: 0.3s;
+}
+.social-button:focus, .social-button:hover {
+    color: #fff;
+}
+.social-button:focus::after, .social-button:hover::after {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    margin-left: calc(-50% - 1px);
+}
+.social-button i,
+.social-button svg {
+    position: relative;
+    z-index: 30;
+    transition: 0.3s;
+}
+.social-button i {
+    font-size: 25.6px;
+}
+.social-button svg {
+    height: 40%;
+    width: 40%;
+}
+.social-button--mail {
+    color: #0072c6;
+}
+.social-button--mail::after {
+    background: #0072c6;
+}
+.social-button--facebook {
+    color: #3b5999;
+}
+.social-button--facebook::after {
+    background: #3b5999;
+}
+.social-button--linkedin {
+    color: #0077b5;
+}
+.social-button--linkedin::after {
+    background: #0077b5;
+}
+.social-button--github {
+    color: #6e5494;
+}
+.social-button--github::after {
+    background: #6e5494;
+}
+.social-button--codepen {
+    color: #212121;
+}
+.social-button--codepen::after {
+    background: #212121;
+}
+.social-button--steam {
+    color: #7da10e;
+}
+.social-button--steam::after {
+    background: #7da10e;
+}
+.social-button--snapchat {
+    color: #eec900;
+}
+.social-button--snapchat::after {
+    background: #eec900;
+}
+.social-button--twitter {
+    color: #55acee;
+}
+.social-button--twitter::after {
+    background: #55acee;
+}
+.social-button--instagram {
+    color: #e4405f;
+}
+.social-button--instagram::after {
+    background: #e4405f;
+}
+.social-button--npmjs {
+    color: #c12127;
+}
+.social-button--npmjs::after {
+    background: #c12127;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    font-family: Hack, monospace;
+}
+
+div {
+    color: #727272;
+    text-align: center;
+}
+
+nav {
+    margin: 25px;
+    background: #f9f9f9;
+    padding: 16px;
+}
+nav:hover{
+}
+nav .menuItems {
+    list-style: none;
+    display: flex;
+}
+nav .menuItems li {
+    margin: 50px;
+}
+nav .menuItems li a {
+    text-decoration: none;
+    color: #877160;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px;
+    border: 3px #B0C7D8 solid;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav .menuItems li a:hover {
+    width: 100%;
+    color: white;
+    background-color: #607788;
+
+}
+.chip-dale-wrapper{
+    position: relative;
+}
+.side {
+    position: absolute;
+    width: 360px;
+    top: 0;
+    bottom: 0;
+    z-index: 60;
+}
+.side.left {
+    left: 0;
+}
+.side.left:hover ~ .wrapper .front {
+    transform: matrix3d(0.94, 0, 0.34, -0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 10, 1) translateX(-10px);
+}
+
+.side.left:hover ~ .wrapper .front2 {
+    transform: matrix3d(0.94, 0, 0.34, -0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 20, 1) translateX(-10px);
+}
+
+.side.left:hover ~ .wrapper .front3 {
+    transform: matrix3d(0.94, 0, 0.34, -0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 30, 1) translateX(-10px);
+}
+.side.left:hover ~ .wrapper .front4 {
+    transform: matrix3d(0.94, 0, 0.34, -0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 40, 1) translateX(-10px);
+}
+.side.left:hover ~ .wrapper .front5 {
+    transform: matrix3d(0.94, 0, 0.34, -0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 50, 1) translateX(-10px);
+}
+.side.left:hover ~ .wrapper .front6 {
+    transform: matrix3d(0.94, 0, 0.34, -0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 60, 1) translateX(-10px);
+}
+
+
+.side.right {
+    right: 0;
+}
+.side.right:hover ~ .wrapper .front {
+    transform: matrix3d(0.94, 0, 0.34, 0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 10, 1) translateX(30px);
+}
+
+.side.right:hover ~ .wrapper .front2 {
+    transform: matrix3d(0.94, 0, 0.34, 0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 20, 1) translateX(30px);
+}
+.side.right:hover ~ .wrapper .front3 {
+    transform: matrix3d(0.94, 0, 0.34, 0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 30, 1) translateX(30px);
+}
+.side.right:hover ~ .wrapper .front4 {
+    transform: matrix3d(0.94, 0, 0.34, 0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 40, 1) translateX(30px);
+}
+.side.right:hover ~ .wrapper .front5 {
+    transform: matrix3d(0.94, 0, 0.34, 0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 50, 1) translateX(30px);
+}
+.side.right:hover ~ .wrapper .front6 {
+    transform: matrix3d(0.94, 0, 0.34, 0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 60, 1) translateX(30px);
+}
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 720px;
+    width: 1280px;
+    margin: 60px;
+}
+
+.image {
+    perspective: 200px;
+    transition: all 0.2s ease;
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+}
+.background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    /*left: 0;*/
+}
+
+.front {
+    position: absolute;
+    top: 300px;
+    left: 850px;
+    z-index: 10;
+}
+.front2 {
+    position: absolute;
+    top: 30px;
+    left: 200px;
+    z-index: 20;
+}
+.front3 {
+    position: absolute;
+    top: 30px;
+    left: 600px;
+    z-index: 30;
+}
+.front4 {
+    position: absolute;
+    top: 0.5fr;
+    left: 0.5fr;
+    z-index: 40;
+}
+
+.front5 {
+    position: absolute;
+    top: 400px;
+    left: 150px;
+    z-index: 50;
+}
+.front6 {
+    position: absolute;
+    top: 400px;
+    left: 650px;
+    z-index: 60;
+}
+
+.form{
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+}
+input{
+    margin: 5px;
+}
+
+
+.yellow{
+    background-color: #f3f3bf;
+    border: 5px solid #b9b986;
+}
+
+.red{
+    background-color: #e5b4ad;
+    border: 5px solid #d55f5f;
+}
+
+.blue{
+    background-color: #add8e5;
+    border: 5px solid #5fa0d5;
+}
+
+.green{
+    background-color: #cdf1c5;
+    border: 5px solid #a6d55f;
+}
+
+.submitButton{
+    background-color: #cdf1c5;
+    border: none;
+    padding: 3px;
+}
+.cleanButton{
+    background-color: #f1c5d6;
+    border: none;
+    padding: 3px;
+}
+
